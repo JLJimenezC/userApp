@@ -1,1 +1,10 @@
-<p>home works!</p>
+<section class="Usuarios mt-usuarios">
+    <div class="row g-4 justify-content-md-center">
+      @for(user of arrUsers; track user._id){
+      <article class="col-12 col-md-6 col-lg-3 mt-8">
+        <app-user-card [myUser]="user"></app-user-card>
+      </article>
+      }
+    </div>
+  </section>
+  
