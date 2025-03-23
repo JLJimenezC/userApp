@@ -17,6 +17,6 @@ export interface IUser {
     password:   string; // Se elimina el enum innecesario
 }
 
-export enum Password {
+export enum IPassword {
     User12345 = "user12345",
 }

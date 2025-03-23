@@ -1,1 +1,26 @@
-<p>update-user works!</p>
+<section class="container mt-3">
+    <h1>Actualización de Usuario</h1>
+    <hr />
+
+    <form [formGroup]="userForm" (ngSubmit)="updateUser()">
+      <div class="mb-3">
+        <label class="form-label" for="first_name">Nombre</label>
+        <input class="form-control" type="text" id="first_name" formControlName="nombre" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="last_name">Apellido</label>
+        <input class="form-control" type="text" id="last_name" formControlName="apellido" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" type="email" id="email" formControlName="email" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="image">Imagen (URL o base64)</label>
+        <input class="form-control" type="text" id="image" formControlName="image" />
+      </div>
+
+      <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+  </section>
+  

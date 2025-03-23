@@ -1,0 +1,45 @@
+.user-container {
+    margin-top: 6rem; /* Adjust as needed */
+  }
+  
+  /* Contenedor con fondo claro */
+  .user-container {
+    background-color:#f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-dark);
+  }
+  
+  /* Imagen del usuario */
+  .user-avatar {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #343a40;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Tipografía */
+  h1 {
+    color:#212529
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  /* Colores de texto */
+  .text-dark {
+    color:#212529
+  }
+  
+  .text-green {
+    color:#004643
+  }
+  
+  .border-dark {
+    border-color: var(--border-dark) !important;
+  }
+  
