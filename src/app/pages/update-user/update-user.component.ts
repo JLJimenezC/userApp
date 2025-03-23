@@ -63,7 +63,7 @@ export class UpdateUserComponent {
   }
 
 
-  updateUser(): void {
+  async updateUser() {
     console.log('Formulario válido?', this.userForm.valid);
     Object.keys(this.userForm.controls).forEach(key => {
       console.log(`${key}: ${this.userForm.get(key)?.valid}`);
@@ -77,7 +77,8 @@ export class UpdateUserComponent {
   
     if (this.idUser) {
       const updatedUser: IUser = this.userForm.value;
-      this.usersService.updateUser(this.idUser, updatedUser).then(
+      console.log("Enviado: ",updatedUser)
+      await this.usersService.updateUser(this.idUser, updatedUser).then(
         (response) => {
 
           console.log('Respuesta de la API:', response);
