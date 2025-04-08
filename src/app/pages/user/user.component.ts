@@ -30,6 +30,7 @@ export class UserComponent {
     if (confirmed) {
       try {
         await this.userService.deleteUser(id); 
+        
         alert("Usuario eliminado correctamente.");
         this.router.navigate(['/users']); 
       } catch (error) {
