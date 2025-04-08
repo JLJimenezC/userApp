@@ -13,18 +13,34 @@ import { UserCardComponent } from "../../components/user-card/user-card.componen
 export class HomeComponent {
   arrUsers: IUser[] = [];
   userServices = inject(UsersService);
-  nextLink: string = '';
-  previousLing: string = '';
+  currentPage: number = 1;
+  totalPages: number = 0;
 
   ngOnInit() {
     this.loadUsers();
   }
-  async loadUsers(url: string = '') {
+  async loadUsers(page: number = 1) {
     try {
-      let response: IResponse = await this.userServices.getAll(url);
-      this.arrUsers = response.results;
+      const response = await this.userServices.getAll(page);
+      
+  
+      if (response) {
+        this.arrUsers = response.results;
+        this.currentPage = response.page;
+        this.totalPages = response.total_pages;
+      }
     } catch (error) {
-      console.log(error);
+      console.error('Error loading users:', error);
+    }
+  }
+
+  loadPage(isNext: boolean) {
+    const nextPage = isNext ? 
+      this.currentPage + 1 : 
+      this.currentPage - 1;
+
+    if (nextPage > 0 && nextPage <= this.totalPages) {
+      this.loadUsers(nextPage);
     }
   }
   
